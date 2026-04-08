@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.output {
+    display: flex;
+    padding: 8px;
+    justify-content: space-between;
+}
+
+.tictactoe {
+    height: calc(100vh - 35px);
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+button {
+    border: none;
+    background-color: transparent;
+}
+button:hover {
+    background-color: rgba(250, 235, 215, 0.389);
+}
+.tictactoe button:nth-child(-n + 6) {
+    border-bottom: 1px solid black;
+}
+.tictactoe button:nth-child(3n + 2) {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
