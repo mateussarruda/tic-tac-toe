@@ -18,6 +18,7 @@
     grid-template-rows: 1fr 1fr 1fr;
 }
 button {
+    font-size: 10vw;
     border: none;
     background-color: transparent;
 }
@@ -25,9 +26,9 @@ button:hover {
     background-color: rgba(250, 235, 215, 0.389);
 }
 .tictactoe button:nth-child(-n + 6) {
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid black;
 }
 .tictactoe button:nth-child(3n + 2) {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
 }
