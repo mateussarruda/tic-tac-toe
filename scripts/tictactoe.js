@@ -88,7 +88,15 @@ export const Gameboard = (() => {
         }
         return true;
     }
-    return {displayController, play, createPlayer, getCurrentPlayer}
+    const reset = () => {
+        plays = [];
+        gameboard = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ];
+    }
+    return {displayController, play, createPlayer, getCurrentPlayer, reset}
 })();
 /* Gameboard.createPlayer('mateus');
 Gameboard.createPlayer('marcos');

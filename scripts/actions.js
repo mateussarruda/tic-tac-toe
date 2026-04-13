@@ -1,6 +1,6 @@
 import { Gameboard } from './tictactoe.js';
 const table = document.querySelector('.tictactoe');
-
+const resetBtn = document.querySelector('.reset');
 Gameboard.createPlayer('mateus');
 Gameboard.createPlayer('marcos');
 
@@ -15,3 +15,11 @@ table.addEventListener('click', (e) => {
         }
     }
 });
+
+resetBtn.addEventListener('click', () => {
+    Gameboard.reset();
+    const placeBtns = document.querySelectorAll('.place');
+    for (let place of placeBtns) {
+        place.textContent = '';
+    }
+})
