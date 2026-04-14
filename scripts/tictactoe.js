@@ -88,15 +88,20 @@ export const Gameboard = (() => {
         }
         return true;
     }
+    const checkDraw = () => {
+        if (!checkGameOver() && plays.length >= 9) {
+            return true;
+        }
+    }
     const reset = () => {
         plays = [];
         gameboard = [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]
-    ];
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0]
+        ];
     }
-    return {displayController, play, createPlayer, getCurrentPlayer, reset}
+    return {displayController, play, createPlayer, getCurrentPlayer, reset, checkGameOver, checkDraw}
 })();
 /* Gameboard.createPlayer('mateus');
 Gameboard.createPlayer('marcos');

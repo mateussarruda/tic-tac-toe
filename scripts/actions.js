@@ -1,3 +1,4 @@
+import { displayRestart } from './restart.js';
 import { Gameboard } from './tictactoe.js';
 const table = document.querySelector('.tictactoe');
 const resetBtn = document.querySelector('.resetBtn');
@@ -22,4 +23,9 @@ resetBtn.addEventListener('click', () => {
     for (let place of placeBtns) {
         place.textContent = '';
     }
-})
+});
+
+table.addEventListener('click', () => {
+    displayRestart();
+    console.log('change');
+});

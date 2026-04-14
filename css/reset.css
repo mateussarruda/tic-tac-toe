@@ -3,8 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    
+}
 .reset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     background-color: rgb(185, 199, 194);
     border-radius: 16px;
     padding: 100px;
