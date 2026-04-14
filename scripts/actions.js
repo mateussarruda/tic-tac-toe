@@ -1,6 +1,6 @@
 import { Gameboard } from './tictactoe.js';
 const table = document.querySelector('.tictactoe');
-const resetBtn = document.querySelector('.reset');
+const resetBtn = document.querySelector('.resetBtn');
 Gameboard.createPlayer('mateus');
 Gameboard.createPlayer('marcos');
 
