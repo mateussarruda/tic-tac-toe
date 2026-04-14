@@ -17,13 +17,7 @@ table.addEventListener('click', (e) => {
     }
 });
 
-resetBtn.addEventListener('click', () => {
-    Gameboard.reset();
-    const placeBtns = document.querySelectorAll('.place');
-    for (let place of placeBtns) {
-        place.textContent = '';
-    }
-});
+
 
 table.addEventListener('click', () => {
     displayRestart();

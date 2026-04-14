@@ -8,9 +8,9 @@ export const Gameboard = (() => {
     const player = [];
     const createPlayer = (name) => {
         if (player.length < 1) {
-            player.push({name: name, mark: 'x'});
+            player.push({name: name, mark: 'x', point: 0});
         } else if (player.length < 2){
-            player.push({name: name, mark: 'o'});
+            player.push({name: name, mark: 'o', point: 0});
         } else {
             console.log('Número de jogadores máximo atingido')
         }
@@ -62,9 +62,20 @@ export const Gameboard = (() => {
             console.log(place);
         }
     }
+    const addPoint = (player) => {
+        if(!checkDraw()) {
+            player.point += 1;
+        }
+        console.log('ghfhskj');
+        console.log(player);
+    }
+    const getPlayers = () => {
+        return player;
+    }
     const play = (place) => {
         if (checkGameOver()) {
             console.log('fim de jogo!');
+            
             return false;
         }
         if (player.length < 2) {
@@ -81,11 +92,12 @@ export const Gameboard = (() => {
         const column = (place -1) % 3;
         gameboard[line][column] = (currentPlayer === 1) ? player[0].mark : player[1].mark;
         console.log(`Jogada feita na casa ${place} pelo ${player[currentPlayer - 1].name}`);
-        currentPlayer = (currentPlayer === 1) ? 2 : 1;
         plays.push(place);
         if (checkGameOver()) {
             console.log('fim de jogo!');
+            addPoint(player[currentPlayer - 1]);
         }
+        currentPlayer = (currentPlayer === 1) ? 2 : 1;
         return true;
     }
     const checkDraw = () => {
@@ -101,7 +113,7 @@ export const Gameboard = (() => {
             [0, 0, 0]
         ];
     }
-    return {displayController, play, createPlayer, getCurrentPlayer, reset, checkGameOver, checkDraw}
+    return {displayController, play, createPlayer, getCurrentPlayer, reset, checkGameOver, checkDraw, getPlayers}
 })();
 /* Gameboard.createPlayer('mateus');
 Gameboard.createPlayer('marcos');
