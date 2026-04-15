@@ -2,8 +2,12 @@ import { displayRestart } from './restart.js';
 import { Gameboard } from './tictactoe.js';
 const table = document.querySelector('.tictactoe');
 const resetBtn = document.querySelector('.resetBtn');
-Gameboard.createPlayer('mateus');
-Gameboard.createPlayer('marcos');
+
+const urlParams = new URLSearchParams(window.location.search);
+
+
+Gameboard.createPlayer(urlParams.get('player1'));
+Gameboard.createPlayer(urlParams.get('player2'));
 
 table.addEventListener('click', (e) => {
     const target = e.target;
