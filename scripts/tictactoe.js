@@ -55,7 +55,7 @@ export const Gameboard = (() => {
     }
     let winners = [];
     const getWinner = () => {
-        const lastWinnerNumber = winners.slice(-1)
+        const lastWinnerNumber = winners.slice(-1);
         return player[lastWinnerNumber - 1];
     }
     let currentPlayer = 1;

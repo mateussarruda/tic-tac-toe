@@ -16,6 +16,7 @@
 .reset {
     display: flex;
     flex-direction: column;
+    gap: 8px;
     justify-content: center;
     align-items: center;
     
@@ -27,6 +28,10 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+.newGame {
+    color: black;
+    box-shadow: 2px 1px brown;
 }
 .resetBtn {
     padding: 8px 16px;
