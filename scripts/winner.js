@@ -7,6 +7,6 @@ tablettt.addEventListener('click', () => {
     if (!Gameboard.checkDraw()) {
         winnerEle.textContent = `${Gameboard.getWinner().name} Win`;
     } else {
-        winnerEle.textContent = 'Empatou';
+        winnerEle.textContent = 'The game was tied';
     }
 });
