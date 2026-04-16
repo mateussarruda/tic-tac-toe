@@ -53,6 +53,11 @@ export const Gameboard = (() => {
     const gameover = (player) => {
         console.log(`${player.name} venceu!`);
     }
+    let winners = [];
+    const getWinner = () => {
+        const lastWinnerNumber = winners.slice(-1)
+        return player[lastWinnerNumber - 1];
+    }
     let currentPlayer = 1;
     const getCurrentPlayer = () => {
         return currentPlayer;
@@ -97,6 +102,7 @@ export const Gameboard = (() => {
             console.log('fim de jogo!');
             addPoint(player[currentPlayer - 1]);
         }
+        winners.push(currentPlayer);
         currentPlayer = (currentPlayer === 1) ? 2 : 1;
         return true;
     }
@@ -113,7 +119,7 @@ export const Gameboard = (() => {
             [0, 0, 0]
         ];
     }
-    return {displayController, play, createPlayer, getCurrentPlayer, reset, checkGameOver, checkDraw, getPlayers}
+    return {displayController, play, createPlayer, getCurrentPlayer, reset, checkGameOver, checkDraw, getPlayers, getWinner}
 })();
 /* Gameboard.createPlayer('mateus');
 Gameboard.createPlayer('marcos');
