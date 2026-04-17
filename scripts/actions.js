@@ -6,8 +6,8 @@ const resetBtn = document.querySelector('.resetBtn');
 const urlParams = new URLSearchParams(window.location.search);
 
 
-Gameboard.createPlayer(urlParams.get('player1'));
-Gameboard.createPlayer(urlParams.get('player2'));
+Gameboard.createPlayer((urlParams.get('player1') ? urlParams.get('player1'): 'Player 1'));
+Gameboard.createPlayer(urlParams.get('player2') ? urlParams.get('player2') : 'Player 2');
 
 table.addEventListener('click', (e) => {
     const target = e.target;
