@@ -5,5 +5,5 @@ const player2name = document.querySelector('.player2name');
 
 let playerName = Gameboard.getPlayers();
 
-player1name.textContent = playerName[0].name;
+player1name.textContent = (playerName[0].name);
 player2name.textContent = playerName[1].name;
